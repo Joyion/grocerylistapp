@@ -1,0 +1,13 @@
+1. Finish client to api routes
+2. add authorization
+3. add api for recipe 
+    1. research api
+    2. make call to api in react client
+    3. make recipe page
+4. add feature to make multiple list
+
+
+1. Make local storage on ListItemPage  
+    a. make app work without database;
+2. set up database 
+3. fix actions to contain dispatch for store and items
