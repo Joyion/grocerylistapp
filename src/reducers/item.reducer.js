@@ -12,7 +12,7 @@ export default (state = defaultItems, action) => {
             return [...state, action.item];
         case "ADD_COUNT":
             return state.map((item) =>{
-                if(item.name.toUpperCase() == action.item.name.toUpperCase() &&
+                if(item.name.toUpperCase().trim() == action.item.name.toUpperCase().trim() &&
                     item.type.toUpperCase().trim() == action.item.type.toUpperCase().trim()){
                     item.count++;
                     return item;
@@ -24,7 +24,7 @@ export default (state = defaultItems, action) => {
         case "REMOVE_COUNT":
             return state.map((item) =>{
                 if(item.name.toUpperCase().trim() == action.item.name.toUpperCase().trim()  &&
-                    item.type.toUpperCase().trim() == action.item.type.toUpperCase.trim()){
+                    item.type.toUpperCase().trim() == action.item.type.toUpperCase().trim()){
                     item.count--;
                     return item;
                 }
@@ -35,8 +35,8 @@ export default (state = defaultItems, action) => {
         case "RESET_ITEM":
             return state.filter((item) =>{
                
-               return !(item.name.toUpperCase().trim() == action.item.name.toUpperCase().trim() &&
-                    item.type.toUpperCase().trim() == action.item.type.toUpperCase().trim())
+               return  item.name.toUpperCase().trim() != action.item.name.toUpperCase().trim() &&
+                    item.type.toUpperCase().trim() != action.item.type.toUpperCase().trim();
             });
         case "RESET_ALL":
             return [];

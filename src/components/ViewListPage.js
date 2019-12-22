@@ -15,25 +15,20 @@ class ViewListPage extends React.Component{
         this.resetItem = this.resetItem.bind(this);
         this.resetAll = this.resetAll.bind(this);
     }
-
     componentDidMount(){
-        try{
-            const json = localStorage.getItem("items");
-            console.log(json);
+        const json = localStorage.getItem("items");
+        if(json){
             this.props.dispatch(getItemsToItem(JSON.parse(json)));
         }
-        catch(e){
-           
-        }
     }
 
+
     componentDidUpdate(){
-        if(this.props.items){
-            console.log(this.props.items);
-            const json = JSON.stringify(this.props.items);
-            localStorage.setItem("items", json);
-        }
+        const json = JSON.stringify(this.props.items);
+        localStorage.setItem("items", json);
+        console.log("update local storage")
     }
+
 
     addingItem(item){
         this.props.dispatch(addItemToItems(item));
@@ -47,8 +42,16 @@ class ViewListPage extends React.Component{
     }
 
     decrCount(item){
-        this.props.dispatch(removeCountToItems(item));
-        this.props.dispatch(subtractCount(item));
+        console.log(item.count);
+        if(item.count == 1){
+            this.props.dispatch(resetItemToItems(item));
+            this.props.dispatch(subtractCount(item)); 
+           
+        }
+        else {
+            this.props.dispatch(removeCountToItems(item));
+        }
+       
 
     }
     

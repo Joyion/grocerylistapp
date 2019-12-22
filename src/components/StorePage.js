@@ -36,8 +36,19 @@ class StorePage extends React.Component{
             const myitems = this.props.items.map((item) => {return item});
             startGetStore(this.props.dispatch, myitems);
         }
-    
+
+        // create dispatch to match all store items to current items
+  
     }
+
+    componentDidUpdate(){
+        const json = JSON.stringify(this.props.items);
+        localStorage.setItem("items", json);
+        console.log("update local storage")
+    }
+
+
+  
 
     onCategoryClick(e){
         e.preventDefault();
@@ -51,12 +62,26 @@ class StorePage extends React.Component{
 
     addCount(item){
         this.props.dispatch(addToCount(item));
-        this.props.dispatch(addCountToItems(item));
+        console.log(item.count);
+        if (item.count == 1 ){
+            console.log("Doing this");
+            this.props.dispatch(addItemToItems(item));
+        }
+        else {
+           this.props.dispatch(addCountToItems(item));  
+        }
+       
     }
 
     subCount(item){
         this.props.dispatch(subtractCount(item));
-        this.props.dispatch(removeCountToItems(item));
+        if(item.count == 0){
+           this.props.dispatch(resetItemToItems(item)); 
+        }
+        else{
+            this.props.dispatch(removeCountToItems(item));
+        }
+        
     }
 
     removeCount(item){

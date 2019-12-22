@@ -7,6 +7,7 @@ import store from "./store/configStore";
 
 class App extends React.Component{
 
+
     render(){
         return (
             <Provider store={store}>
