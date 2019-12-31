@@ -42,26 +42,25 @@ class AddItem extends React.Component{
     render(){
         return (
             <div>
-            <form onSubmit={this.handleSubmit}>
-            <label htmlFor="item">
-                Item: <input onChange={this.itemChange} value={this.state.item} type="text" id="item" name="item"/>
+            <form className="container" onSubmit={this.handleSubmit}>
+            <label className="container-flex-label" htmlFor="item">
+                <span>Item:</span> <input autoFocus className="input" onChange={this.itemChange} value={this.state.item} type="text" id="item" name="item"/>
             </label>
-            <label htmlFor="quantity">
-                Quantity: <input onChange={this.quantityChange} value={this.state.quantity} type="text" id="quantity" name="count"/>
+            <label className="container-flex-label" htmlFor="quantity">
+               <span >Quantity:</span><input className="input" onChange={this.quantityChange} value={this.state.quantity} type="text" id="quantity" name="count"/>
             </label>
-            <label htmlFor="type">
+            <label className="container-flex-label" htmlFor="type">
                 Type: 
-                <select value={this.state.type} onChange={this.typeChange}>
+                <select className="input input-select" value={this.state.type} onChange={this.typeChange}>
                     <option value="Dairy">Dairy</option>
                     <option value="Deli/Meat">Deli/Meat</option>
                     <option value="Canned Goods">Canned Goods</option>
                     <option value="Frozen">Frozen</option>
                     <option value="Fruit/Vegetable">Fruit/Vegetable</option>
                     <option value="Spices/Condiments">Spices/Condiments</option>
-                </select>
-                <button type="submit">Add Item</button>
+                </select>   
             </label>
-                
+            <button className="button" type="submit">Add Item</button>
 
             </form>
                

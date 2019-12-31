@@ -11,3 +11,7 @@
     a. make app work without database;
 2. set up database 
 3. fix actions to contain dispatch for store and items
+
+CSS:
+1. header should have background image with grocery food items
+2. Make navbar to collapse for mobile

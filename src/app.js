@@ -4,6 +4,10 @@ import AppRouter from "./router/AppRouter";
 import {Provider} from "react-redux";
 import store from "./store/configStore";
 
+import "normalize-css";
+import "./styles/style.scss";
+
+
 
 class App extends React.Component{
 

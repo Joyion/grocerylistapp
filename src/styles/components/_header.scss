@@ -1,0 +1,16 @@
+.header_container{
+    width: 100%;
+    display: flex;
+    background-color: black;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 .5rem;
+}
+
+.header_title{
+    font-size: 2rem;
+}
+
+.header_navlink {
+    font-family: sans-serif;
+}
