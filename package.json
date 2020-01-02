@@ -6,6 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.dev.js",
+    "start": "node server/server.js",
+    "heroku-postbuild": "webpack --config webpack.prod.js",
     "devserver": "webpack-dev-server --open --config webpack.dev.js ",
     "concur": "concurrently \"npm run devserver\" \"node server/server.js\""
   },
