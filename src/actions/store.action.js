@@ -5,7 +5,7 @@ export const getStore = (store) => ({
 })
 
 export const startGetStore = (dispatch, items) => {
-    axios.get('http://localhost:5000/api/store')
+    axios.get('/api/store')
     .then(function (response) {
         console.log("making request");
         console.log(response.data);
