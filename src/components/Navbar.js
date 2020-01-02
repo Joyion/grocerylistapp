@@ -3,6 +3,9 @@ import {NavLink} from "react-router-dom";
 
 
 const NavBar = () => {
+
+
+
     return(
         <div className="header_container">
             <div>
@@ -11,6 +14,7 @@ const NavBar = () => {
             <div>
                 <NavLink exact to="/">View List</NavLink>
                 <NavLink to="/findItems">Find Items</NavLink>
+                <button onClick={(e) => {console.log("loggin in")}}>Link</button>
             </div>   
         </div>
     
